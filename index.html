@@ -232,13 +232,13 @@
                   </div>
 
                   <!-- set number  -->
-                  <div class="grid grid-cols-6 gap-10 mt-10">
+                  <div class="grid grid-cols-6 gap-10 mt-10 mr-20">
                     <button class="py-4 text-black text-2xl"></button>
                     <button class="p-4  text-black text-2xl"></button>
                     <button class="p-4  text-black text-2xl"></button>
                     <button class="p-4 text-black text-2xl"></button>
                     <button class="p-4  text-black text-2xl"></button>
-                    <button class="btn bg-slate-200 text-black"> <img src="./images/driver.png" alt="">
+                    <button class="btn h-44 w-44 bg-slate-200 text-black"> <img src="./images/driver.png" alt="">
                     </button>
                   </div>
 
@@ -332,7 +332,7 @@
                   <h1 class="text-4xl py-5">Select Your Seat</h1>
 
                   <div class="bg-slate-50 p-10 pt-5 mt-5 text-xl rounded-2xl">
-                    <div class="grid  grid-cols-3 mt-5">
+                    <div class="grid  grid-cols-3 my-5">
                       <h1 class="px-5">Seat <span id="add-cart" class="bg-[#1cd100] p-1 text-white">0</span></h1>
                       <h1>Class</h1>
                       <h1 class="px-5">Price</h1>
@@ -343,39 +343,39 @@
                       <table class="table">
                         <!-- head -->
                         <thead></thead>
-                        <tbody>
+                        <tbody class="px-20">
                           <!-- row 1 -->
-                          <tr class="">
+                          <tr class="text-xl">
                             <td id="li1">A1</td>
                             <td id="">Economy</td>
                             <td id="li1T">550</td>
                           </tr>
                           <!-- row 2 -->
-                          <tr id="tr2" class="tr2">
+                          <tr id="tr2" class="text-xl">
                             <td>A2</td>
                             <td>Economy</td>
                             <td>550</td>
                           </tr>
                           <!-- row 3 -->
-                          <tr id="tr3" class="tr3">
+                          <tr id="tr3" class="text-xl">
                             <td>A3</td>
                             <td>Economy</td>
                             <td>550</td>
                           </tr>
 
                           <!-- row 4 -->
-                          <tr id="tr4" class="tr3">
+                          <tr id="tr4" class="text-xl">
                             <td>A4</td>
                             <td>Economy</td>
                             <td>550</td>
                           </tr>
                         </tbody>
                       </table>
-                      <hr>
+                      <hr class="mb-2">
 
                       <div class="flex justify-between px-20">
                         <p>Total Price</p>
-                        <p>BDT <span id="total-price">1650</span></p>
+                        <p>BDT <span id="total-price">0</span></p>
                       </div>
 
                       <div id="cupon-section" class="flex justify-between p-2">
@@ -386,14 +386,14 @@
 
                       <div id="discount-section" class="flex justify-between px-20 hidden p-2">
                         <p>Discount (<span id="percent"></span> %) </p>
-                        <p>BDT -<span id="disCount"> 1650</span></p>
+                        <p>BDT -<span id="disCount"> 0</span></p>
                       </div>
 
 
-
+                      <hr class="mt-2">
                       <div class="flex justify-between px-20">
                         <p>Grand Total</p>
-                        <p>BDT <span id="finalPrice">1650</span></p>
+                        <p>BDT <span id="finalPrice" class="finalPrice">0</span></p>
                       </div>
                     </div>
                   </div>
@@ -414,7 +414,7 @@
   
                     <div class=" p-4">
                       <h1 class="my-2">Email : </h1>
-                      <input class="border-2 flex-1 text-xl w-full p-2" type="text" name="" id="">
+                      <input class="border-2 flex-1 text-xl w-full p-2" type="text" name="" id="email">
                     </div>
 
                     <div class="p-4">
@@ -447,7 +447,7 @@
         <p class="">Thank you for Booking Our Bus Seats. 
           We are working hard to find the best service and deals for you. 
           Shortly you will find a confirmation in your email.</p>
-          <button id="Continue"  class="bg-green-500 btn text-white text-2xl">Continue</button>
+          <button id="Continue" onclick="homePage()" class="bg-green-500 btn text-white text-2xl">Continue</button>
       </div>
     </div>
 

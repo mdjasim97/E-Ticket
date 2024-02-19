@@ -1,10 +1,13 @@
 
 
-function getElementTextById(elementId){
-    const element = document.getElementById(elementId).innerText;
-    return element
+// function getElementTextById(elementId){
+//     const element = document.getElementById(elementId).innerText;
+//     return element
 
-}
+// }
+
+
+
 
 
 function hideElementById(elementId){

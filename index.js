@@ -7,6 +7,7 @@ function goToTicketSection(){
 const allSeats = document.getElementsByClassName("seat");
 
 let seatPrice = 0;
+let GrantPrice = 0;
 let count = 0;
 
 
@@ -15,24 +16,29 @@ let updateLeftSeat = parseInt(getLeftSeat);
 
 for (const seat of allSeats){
     seat.addEventListener('click', function(){
-        // seat.classList.add("bg-green-400");
-        // seat.classList.add("text-white");
-        toggleSelection()
+        seat.classList.add("bg-green-400");
+        seat.classList.add("text-white");
         console.log(seat)
         count = count + 1;
         updateLeftSeat = updateLeftSeat-1;
 
+        
+
 
         seatPrice = seatPrice + 550;
+        GrantPrice = GrantPrice + 550;
+
+
         document.getElementById("add-cart").innerText = count;
         document.getElementById("total-price").innerText = seatPrice;
         document.getElementById("left-seat").innerText = updateLeftSeat;
+        document.getElementById("finalPrice").innerText = GrantPrice;
 
 
-        getElementTextById("a1");
-        getElementTextById("a2");
-        getElementTextById("a3");
-        getElementTextById("a4");
+        // getElementTextById("a1");
+        // getElementTextById("a2");
+        // getElementTextById("a3");
+        // getElementTextById("a4");
 
         
 
@@ -56,40 +62,27 @@ for (const seat of allSeats){
         else if(count===4){
             showElementById("tr4");
         }else{
-            
+            condition()
         }
+        
 
-
-        // function deSelectButton(){
-        //     seat.classList.remove("bg-green-400");
-        //     seat.classList.remove("text-white")
-        // }
-
-        function toggleSelection() {
-            let isSelected = false
-            isSelected = !isSelected; // Toggle the isSelected variable
-            if (isSelected) {
-                seat.classList.add('bg-green-400');
-            } else {
-                seat.classList.remove('bg-green-400');
+        
+        function condition(){
+            if(count>4 && seatPrice>2200 && GrantPrice>2200){
+                seat.classList.remove("bg-green-400");
+                seat.classList.remove("text-white")
+                document.getElementById("add-cart").innerText = 4;
+                document.getElementById("total-price").innerText = 2200;
+                document.getElementById("left-seat").innerText = 40-4;
+                document.getElementById("finalPrice").innerText = 2200;
+            }else{
+                
             }
         }
-        
-
-        
-        
-
-        if(count>4 && seatPrice>2200){
-            seat.classList.remove("bg-green-400");
-            seat.classList.remove("text-white")
-            document.getElementById("add-cart").innerText = 4;
-            document.getElementById("total-price").innerText = 2200;
-            document.getElementById("left-seat").innerText = 40-4;
-        }else{
-            console.log("site is deselected")
-        }
-        
     })
+
+
+    
 
 
 }
@@ -161,12 +154,14 @@ function applyCoupon(){
 
 const phone = document.getElementById("PhoneNumber");
 const Fname = document.getElementById("Name");
+const email = document.getElementById("email");
 
 phone.addEventListener("input", checkInputField);
 Fname.addEventListener("input", checkInputField);
+email.addEventListener("input", checkInputField);
 
 function checkInputField(){
-    if(Fname.value.length > 0 && phone.value.length>0){
+    if(Fname.value.length > 0 && phone.value.length > 0 && email.value.length > 0){
         nextBtn.removeAttribute('disabled');
     }else{
         nextBtn.setAttribute('disabled', 'disabled');
@@ -185,24 +180,13 @@ function confirmSeat(){
 
 
 
-// // Get reference to the button
-// const toggleButton = document.getElementById('toggleButton');
 
-// // Variable to keep track of button state
-// let isSelected = false;
-
-// // Add event listener to the button
-// toggleButton.addEventListener('click', toggleSelection);
-
-// // Function to toggle selection state
-// function toggleSelection() {
-//     isSelected = !isSelected; // Toggle the isSelected variable
-//     if (isSelected) {
-//         toggleButton.classList.add('selected');
-//     } else {
-//         toggleButton.classList.remove('selected');
-//     }
-// }
+// home page go
+document.getElementById("Continue").addEventListener("click", function (){
+    hideElementById("success-alert");
+    showElementById("header-id");
+    showElementById("main-id")
+})
 
 
 
