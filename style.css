@@ -67,3 +67,7 @@
   .bg-primary{
     background-color: #23d100;
   }
+
+  .selected {
+    background-color: lightblue;
+}
