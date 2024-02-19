@@ -92,9 +92,9 @@ document.getElementById("cupon-apply").addEventListener("click", applyCoupon)
 
 
 function applyCoupon(){
-    let inputData = document.getElementById("cupon-input").value;
-    console.log(inputData);
-    if(inputData==="new15"){
+    const inputDataGet = document.getElementById("cupon-input").value;
+    const couponCode = inputDataGet.toLowerCase()
+    if(couponCode==="new15"){
         let ticketPrice = document.getElementById("total-price").innerText;
         let covertTicketPrice = parseInt(ticketPrice);
 
@@ -114,7 +114,7 @@ function applyCoupon(){
         hideElementById("cupon-section");
         showElementById("discount-section")
     }
-    else if(inputData==="couple20"){
+    else if(couponCode==="couple20"){
         let ticketPrice = document.getElementById("total-price").innerText;
         let covertTicketPrice = parseInt(ticketPrice);
 
